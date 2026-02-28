@@ -1,0 +1,23 @@
+# Main configuration file for image classification demo
+# Uses Hydra for configuration composition
+
+defaults:
+  - data: cifar10
+  - model: resnet18
+  - trainer: default
+  - _self_
+
+# Experiment name
+exp_name: cifar10_resnet18
+
+# Output directory
+output_dir: ./outputs/${exp_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+# Random seed for reproducibility
+seed: 42
+
+# Device configuration
+device: auto  # auto, cpu, cuda
+
+# Logging
+log_interval: 100  # Log every N batches

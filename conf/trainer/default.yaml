@@ -1,0 +1,25 @@
+# Trainer configuration
+
+# Training
+epochs: 50
+lr: 0.1
+momentum: 0.9
+weight_decay: 5e-4
+
+# Learning rate schedule
+lr_scheduler:
+  name: cosine  # cosine, step
+  step_size: 30
+  gamma: 0.1
+  T_max: ${trainer.epochs}
+
+# Checkpointing
+checkpoint_dir: ${output_dir}/checkpoints
+save_interval: 10  # Save every N epochs
+save_best: true
+
+# Early stopping
+early_stopping:
+  enabled: true
+  patience: 10
+  min_delta: 0.001

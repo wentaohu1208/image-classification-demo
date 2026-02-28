@@ -1,0 +1,14 @@
+# ResNet18 model configuration for CIFAR-10
+
+name: resnet18
+
+# Model architecture
+num_classes: 10
+input_channels: 3
+
+# Modified for CIFAR-10 (32x32 images)
+# First conv: 3x3 kernel, stride 1, padding 1 (instead of 7x7, stride 2)
+# Remove maxpool layer
+
+# Pretrained weights (not applicable for CIFAR-10 variant)
+pretrained: false
